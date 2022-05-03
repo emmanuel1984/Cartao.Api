@@ -11,7 +11,7 @@ ENV ASPNETCORE_ENVIRONMENT=Development
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["Cartao.Api.csproj", "."]
-RUN dotnet restore "/Cartao.Api.csproj"
+RUN dotnet restore "./Cartao.Api.csproj"
 COPY . .
 WORKDIR "/src/."
 RUN dotnet build "Cartao.Api.csproj" -c Release -o /app/build
