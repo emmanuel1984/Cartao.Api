@@ -1,0 +1,19 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api-cartao
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api-cartao
+  template:
+    metadata:
+      labels:
+        app: api-cartao
+    spec:
+      containers:
+      - name: api-cartao
+        image: emmanuel84/cartao:1.0
+        ports:
+        - containerPort: 80
